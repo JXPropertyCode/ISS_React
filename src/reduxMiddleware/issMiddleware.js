@@ -2,7 +2,6 @@ import axios from "axios";
 import MovingObject from "../model/MovingObject";
 
 let interval = null;
-const moment = require("moment");
 
 const issMiddleware = (store) => (next) => (action) => {
 	const state = store.getState();
@@ -20,7 +19,7 @@ const issMiddleware = (store) => (next) => (action) => {
 						data.lat,
 						data.lng
 					);
-					console.log("convertData:", convertData);
+					// console.log("convertData:", convertData);
 					next({ type: "iss/fetchSuccess", payload: convertData });
 				})
 				.catch((e) => {
