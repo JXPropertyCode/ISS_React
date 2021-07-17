@@ -2,10 +2,12 @@ import axios from "axios";
 import MovingObject from "../model/MovingObject";
 
 let interval = null;
+const moment = require("moment");
 
 const issMiddleware = (store) => (next) => (action) => {
-	const state = store.getState()
-	const time = state.iss.time
+	const state = store.getState();
+	const time = state.iss.time;
+
 	if (action.type === "FETCH_ISS") {
 		interval = setInterval(() => {
 			axios

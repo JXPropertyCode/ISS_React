@@ -1,10 +1,12 @@
-// import moment from "moment";
+import moment from "moment";
 
-// const convertTime = (givenTimeStamp) => {
-// 	if (givenTimeStamp !== null) {
-// 		return moment.unix(givenTimeStamp).format("MM/DD/YY hh:mm:ss a");
-// 	}
-// };
+const convertTime = (givenTimeStamp) => {
+
+	console.log("givenTimeStamp:", givenTimeStamp)
+	if (givenTimeStamp !== null) {
+		return moment.unix(givenTimeStamp).format("MM/DD/YY hh:mm:ss a");
+	}
+};
 
 class MovingObject {
 	latitude;
@@ -12,7 +14,7 @@ class MovingObject {
 	timestamp;
 
 	constructor(timestamp, latitude, longitude) {
-		this.timestamp = String(timestamp);
+		this.timestamp = String(convertTime(timestamp));
 		this.latitude = Number(latitude);
 		this.longitude = Number(longitude);
 	}
