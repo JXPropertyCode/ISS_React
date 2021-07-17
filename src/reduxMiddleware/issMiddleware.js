@@ -9,7 +9,7 @@ const issMiddleware = (store) => (next) => (action) => {
 	if (action.type === "FETCH_ISS") {
 		interval = setInterval(() => {
 			axios
-				.get(process.env.REACT_APP_GET_API_KEY)
+				.get(process.env.REACT_APP_ISS_SERVER_URL)
 				.then((res) => {
 					// console.log("res.data:", res.data[0])
 					let data = res.data[0];
